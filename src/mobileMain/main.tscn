@@ -145,55 +145,6 @@ theme_override_constants/margin_bottom = 10
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="options" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=946899986]
-custom_minimum_size = Vector2(0, 48)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/options" unique_id=2139423984]
-layout_mode = 2
-theme_override_constants/separation = 16
-alignment = 1
-
-[node name="avisos" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=28752929]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
-theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
-toggle_mode = true
-text = "Avisos"
-
-[node name="rotas" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=1463642080]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
-theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
-toggle_mode = true
-button_pressed = true
-text = "Visualizar e Reservar"
-
-[node name="login" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=1737918610]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_font_sizes/font_size = 72
-theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
-theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
-theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
-text = "Login"
-
 [node name="visualize" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=665339074]
 custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
@@ -286,14 +237,63 @@ uppercase = true
 [node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/visualize/avisos/VBoxContainer" unique_id=2088082997]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_font_sizes/normal_font_size = 24
-theme_override_font_sizes/bold_font_size = 24
-theme_override_font_sizes/bold_italics_font_size = 24
-theme_override_font_sizes/italics_font_size = 24
-theme_override_font_sizes/mono_font_size = 24
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
+theme_override_font_sizes/bold_italics_font_size = 48
+theme_override_font_sizes/italics_font_size = 48
+theme_override_font_sizes/mono_font_size = 48
 bbcode_enabled = true
 text = "[color=yellow]Aviso: [/color] Onibus B 22:00 não poderá fazer a rota completa hoje, \"defeito no Pneu\", Onibus A: 22:00 irá fazer as duas rotas.
 [color=orange]Feriado: [/color] Os onibus não irão fazer a rota no proximo feriado no dia DD/MM/AAAA, portanto não haverá aulas nesse dia."
+
+[node name="options" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=946899986]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/options" unique_id=2139423984]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="avisos" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=28752929]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
+toggle_mode = true
+text = "Avisos"
+
+[node name="rotas" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=1463642080]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
+toggle_mode = true
+button_pressed = true
+text = "Visualizar e Reservar"
+
+[node name="login" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=1737918610]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
+text = "Login"
 
 [node name="login" type="ColorRect" parent="." unique_id=455110791]
 visible = false
@@ -388,9 +388,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
 text = "Entrar"
 
+[connection signal="pressed" from="MarginContainer/VBoxContainer/visualize/rotasInfo/voltar" to="MarginContainer/VBoxContainer/visualize/rotasInfo" method="_on_voltar_pressed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/avisos" to="." method="tab_changed" binds= [1]]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/rotas" to="." method="tab_changed" binds= [0]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/options/HBoxContainer/login" to="." method="_on_login_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/visualize/rotasInfo/voltar" to="MarginContainer/VBoxContainer/visualize/rotasInfo" method="_on_voltar_pressed"]
 [connection signal="pressed" from="login/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/cancela" to="." method="_on_cancela_pressed"]
 [connection signal="pressed" from="login/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/entrar" to="." method="_on_entrar_pressed"]
