@@ -10,7 +10,7 @@ func init(info : RotaObject, Id : int):
 
 func _ready():
 	if ProjectSettings.get("global/isMobile"):
-		add_theme_font_size_override("font_size", 128)
+		add_theme_font_size_override("font_size", 64)
 
 
 func _on_toggled(toggled_on: bool) -> void:
