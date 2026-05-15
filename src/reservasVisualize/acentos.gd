@@ -6,6 +6,12 @@ extends MarginContainer
 @onready var listRight := $content/separator/right
 @onready var textName := $content/Label
 
+func _ready() -> void:
+	if ProjectSettings.get("global/isMobile"):
+		textName.add_theme_font_size_override("font_size", 48)
+		$content/HBoxContainer2/reserva.add_theme_font_size_override("font_size", 36)
+		$content/HBoxContainer2/reserva2.add_theme_font_size_override("font_size", 36)
+
 func setup(info : RotaObject):
 	textName.text = "ÔNIBUS {0} -> {1}".format([info.nome, info.horario])
 	_clearLists()
