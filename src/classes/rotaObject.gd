@@ -15,9 +15,13 @@ enum ACENTO_STATUS {
 #   Isso facilita a leitura do codigo para não temos que adivinhar o que um numero
 # magico significa no contexto.
 
-func init() -> void:
+func _init(Nome : String, Horario : String, tamanho : int, setupOcupado : Array[int]) -> void:
+	nome = Nome
+	horario = Horario
+	totalAcentos = tamanho
 	acentos.resize(totalAcentos)
 	acentos.fill(ACENTO_STATUS.VAZIO)
+	acentosOcupadosSetup(setupOcupado)
 
 func reservarAcento(id : int):
 	if acentos[id] == ACENTO_STATUS.VAZIO:
