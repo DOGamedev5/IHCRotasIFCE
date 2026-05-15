@@ -13,12 +13,13 @@ config_version=5
 config/name="Rotas IFCEs"
 run/main_scene="uid://bqxycsdi7a1ss"
 config/features=PackedStringArray("4.6", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.015979346, 0.08463544, 0.062644035, 1)
+boot_splash/image="uid://bjp8pim4bvtb"
+config/icon="uid://dwam0qu2e3ler"
 
-[display]
+[global]
 
-window/size/viewport_width=648
-window/size/viewport_height=1152
+isMobile=true
 
 [physics]
 

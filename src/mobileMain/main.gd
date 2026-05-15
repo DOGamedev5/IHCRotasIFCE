@@ -13,6 +13,8 @@ extends Control
 @onready var matriculaText := $login/login/PanelContainer/MarginContainer/VBoxContainer/matricula
 @onready var senhaText := $login/login/PanelContainer/MarginContainer/VBoxContainer/senha
 
+@export var context := "desktop"
+
 func tab_changed(toggled_on: bool, id: int) -> void:
 	if toggled_on == true:
 		for i in range(tabsButtons.size()):

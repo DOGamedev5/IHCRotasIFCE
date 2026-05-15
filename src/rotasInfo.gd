@@ -1,4 +1,4 @@
-extends HBoxContainer
+extends BoxContainer
 
 @onready var rotas := [
 	RotaObject.new("A", "6:30", 24, [0, 1, 20, 12, 4, 3, 22, 2, 3]),
@@ -30,11 +30,22 @@ func _ready() -> void:
 		#buttonListReference.append(button)
 		button.connect("selected", rotaSelected)
 	
-	buttonListNode.get_children()[0].button_pressed = true
+	if not ProjectSettings.get("global/isMobile"): buttonListNode.get_children()[0].button_pressed = true
 
 func rotaSelected(id : int, button : Button):
 	for btn : Button in buttonListNode.get_children():
-		if btn != button:
+		if btn != button or ProjectSettings.get("global/isMobile"):
 			btn.button_pressed = false
 	
 	reservarAcentos.setup(rotas[button.id])
+	changeMobileMode(false)
+
+func changeMobileMode(rotaList : bool):
+	if ProjectSettings.get("global/isMobile"):
+		$margin.visible = rotaList
+		$voltar.visible = not rotaList
+		$rotaInfo.visible = not rotaList
+		$acentos.visible = not rotaList
+
+func _on_voltar_pressed() -> void:
+	changeMobileMode(true)
