@@ -1,9 +1,5 @@
 class_name RotaObject extends Resource
 
-@export var nome := "A"
-@export var horario := "6:30"
-@export var acentos : Array[int]= []
-@export var totalAcentos := 30
 
 enum ACENTO_STATUS {
 	VAZIO,
@@ -14,6 +10,13 @@ enum ACENTO_STATUS {
 #   No nosso caso o VAZIO é 0, OCUPADO_OUTRO é 1 e RESERVADO é 2
 #   Isso facilita a leitura do codigo para não temos que adivinhar o que um numero
 # magico significa no contexto.
+#   Funciona basicamente como um valor INT
+
+@export var nome := "A"
+@export var horario := "6:30"
+@export var acentos : Array[ACENTO_STATUS]= [] # mesma coisa que Array[int] porém deixa claro o contexto dos valores
+@export var totalAcentos := 30
+
 
 func _init(Nome : String, Horario : String, tamanho : int, setupOcupado : Array[int]) -> void:
 	nome = Nome

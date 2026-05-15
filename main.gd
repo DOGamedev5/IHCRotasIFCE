@@ -13,10 +13,6 @@ extends Control
 @onready var matriculaText := $login/login/PanelContainer/MarginContainer/VBoxContainer/matricula
 @onready var senhaText := $login/login/PanelContainer/MarginContainer/VBoxContainer/senha
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
 func tab_changed(toggled_on: bool, id: int) -> void:
 	if toggled_on == true:
 		for i in range(tabsButtons.size()):
