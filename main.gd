@@ -1,33 +1,19 @@
 extends Control
 
-@onready var currentTab := 1
-@onready var tabsButtons := [
-	$MarginContainer/VBoxContainer/options/HBoxContainer/rotas,
-	$MarginContainer/VBoxContainer/options/HBoxContainer/avisos
-]
-@onready var tabs := [
-	$"MarginContainer/VBoxContainer/visualize/rotasInfo",
-	$MarginContainer/VBoxContainer/visualize/avisos
-]
-@onready var loginTab := $login
-@onready var matriculaText := $login/login/PanelContainer/MarginContainer/VBoxContainer/matricula
-@onready var senhaText := $login/login/PanelContainer/MarginContainer/VBoxContainer/senha
+@onready var desktop := preload("res://src/desktopMain/main.tscn")
+@onready var mobile := preload("res://src/mobileMain/main.tscn")
 
-func tab_changed(toggled_on: bool, id: int) -> void:
-	if toggled_on == true:
-		for i in range(tabsButtons.size()):
-			tabsButtons[i].button_pressed = i == id
-			tabs[i].visible = tabsButtons[i].button_pressed
+@onready var main : Node
+
+func _ready() -> void:
+	print(ProjectSettings.get("global/isMobile"))
+	if OS.has_feature("mobile"):
+		main = mobile.instantiate()
+		ProjectSettings.set("global/isMobile", true)
+	else:
+		main = desktop.instantiate()
+		ProjectSettings.set("global/isMobile", false)
+		
+	print(ProjectSettings.get("global/isMobile"))
 	
-
-func _on_login_pressed() -> void:
-	matriculaText.text = ""
-	senhaText.text = ""
-	loginTab.visible = true
-
-func _on_cancela_pressed() -> void:
-	loginTab.visible = false
-
-func _on_entrar_pressed() -> void:
-	loginTab.visible = false
-	$MarginContainer/VBoxContainer/options/HBoxContainer/login.text = "mudar de conta"
+	add_child(main)
