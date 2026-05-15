@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://damlntl5je3qg"]
+
+[ext_resource type="Script" uid="uid://duwa757d4bvwd" path="res://src/reservasVisualize/acentos.gd" id="1_r6n58"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+bg_color = Color(0.15090796, 0.4523279, 0.32898548, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0.06451783, 0.23153761, 0.22160873, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0.38862312, 0.6828993, 0.30727363, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0.07243662, 0.117710866, 0.11474667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+bg_color = Color(0.38862312, 0.6828993, 0.30727363, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[node name="acentos" type="MarginContainer" unique_id=1835582175]
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+script = ExtResource("1_r6n58")
+
+[node name="content" type="VBoxContainer" parent="." unique_id=1286624514]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="content" unique_id=600444332]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8833333, 1, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = " ÔNIBUS a: 6:30"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="separator" type="HBoxContainer" parent="content" unique_id=2071429631]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 40
+
+[node name="left" type="GridContainer" parent="content/separator" unique_id=202427750]
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="right" type="GridContainer" parent="content/separator" unique_id=1297691206]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="content" unique_id=79789614]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="reserva" type="Button" parent="content/HBoxContainer2" unique_id=1206319958]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
+text = "Reservar Assento"
+
+[node name="reserva2" type="Button" parent="content/HBoxContainer2" unique_id=461634618]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
+text = "Mudar de assento"
