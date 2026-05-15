@@ -1,0 +1,378 @@
+[gd_scene format=3 uid="uid://66q2gh0peqpn"]
+
+[ext_resource type="Script" uid="uid://dncr86gxieig8" path="res://src/desktopMain/main.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://vbros6c8dgvj" path="res://src/rotasInfo.gd" id="2_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://damlntl5je3qg" path="res://src/reservasVisualize/acentos.tscn" id="3_h2yge"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dm0k"]
+bg_color = Color(0, 0, 0, 0.47058824)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+bg_color = Color(0.15090796, 0.4523279, 0.32898548, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0.06451783, 0.23153761, 0.22160873, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0.38862312, 0.6828993, 0.30727363, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0.07243662, 0.117710866, 0.11474667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+bg_color = Color(0.38862312, 0.6828993, 0.30727363, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
+bg_color = Color(0, 0.41570994, 0.2305767, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycdy4"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 8.0
+bg_color = Color(0.08, 0.08, 0.08, 0.8235294)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2yge"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w48qg"]
+bg_color = Color(0.029770194, 0.15295678, 0.10302677, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vivmo"]
+bg_color = Color(0.06451783, 0.23153761, 0.22160873, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cqfq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yaehf"]
+bg_color = Color(0.07243662, 0.117710866, 0.11474667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[node name="Control" type="Control" unique_id=2007933320]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ig7tw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1254447148]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04554584, 0.14119738, 0.16430548, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=469043195]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=705090214]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="options" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=946899986]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/options" unique_id=2139423984]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="avisos" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=28752929]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
+toggle_mode = true
+text = "Avisos"
+
+[node name="rotas" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=1463642080]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
+toggle_mode = true
+button_pressed = true
+text = "Visualizar e Reservar"
+
+[node name="login" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=1737918610]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
+text = "Login"
+
+[node name="visualize" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=665339074]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
+
+[node name="rotasInfo" type="HBoxContainer" parent="MarginContainer/VBoxContainer/visualize" unique_id=1520495363 node_paths=PackedStringArray("buttonListNode", "reservarAcentos")]
+layout_mode = 2
+script = ExtResource("2_0xm2m")
+buttonListNode = NodePath("margin/list")
+reservarAcentos = NodePath("acentos")
+
+[node name="margin" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=635051732]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="list" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin" unique_id=283445893]
+layout_mode = 2
+
+[node name="rotaInfo" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=1953457855]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="info" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/rotaInfo" unique_id=1976261396]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/rotaInfo/info" unique_id=350351431]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8833333, 1, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "ROTA EFETUADA"
+uppercase = true
+
+[node name="rota" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/rotaInfo/info" unique_id=982777317]
+layout_mode = 2
+text = "- Nova Acopiara
+- Centro de Nutrição de Acopiara
+- Posto desativado
+- Predio do Padre (ponto de onibus)
+- Posto Acopiara
+- Nossa Senhora Aparecida"
+
+[node name="acentos" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=1835582175 instance=ExtResource("3_h2yge")]
+layout_mode = 2
+
+[node name="avisos" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize" unique_id=1783114629]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/avisos" unique_id=1118375148]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/visualize/avisos/VBoxContainer" unique_id=1320865527]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8833333, 1, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "Avisos:"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/visualize/avisos/VBoxContainer" unique_id=2088082997]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 18
+theme_override_font_sizes/bold_italics_font_size = 18
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/mono_font_size = 18
+bbcode_enabled = true
+text = "[color=yellow]Aviso: [/color] Onibus B 22:00 não poderá fazer a rota completa hoje, \"defeito no Pneu\", Onibus A: 22:00 irá fazer as duas rotas.
+[color=orange]Feriado: [/color] Os onibus não irão fazer a rota no proximo feriado no dia DD/MM/AAAA, portanto não haverá aulas nesse dia."
+
+[node name="login" type="ColorRect" parent="." unique_id=455110791]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.58431375)
+
+[node name="login" type="MarginContainer" parent="login" unique_id=1948990364]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 192
+
+[node name="PanelContainer" type="PanelContainer" parent="login/login" unique_id=25951452]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dg77c")
+
+[node name="MarginContainer" type="MarginContainer" parent="login/login/PanelContainer" unique_id=825001421]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="login/login/PanelContainer/MarginContainer" unique_id=1427611330]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="login/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=640387843]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Login"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="matricula" type="LineEdit" parent="login/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=867018421]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
+placeholder_text = "Matricula"
+
+[node name="senha" type="LineEdit" parent="login/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=313298740]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
+placeholder_text = "Senha"
+secret = true
+
+[node name="HSeparator" type="HSeparator" parent="login/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1446714383]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_h2yge")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="login/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1397224808]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="cancela" type="Button" parent="login/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=693523300]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
+text = "cancelar"
+
+[node name="entrar" type="Button" parent="login/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=93582687]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
+text = "Entrar"
+
+[connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/avisos" to="." method="tab_changed" binds= [1]]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/rotas" to="." method="tab_changed" binds= [0]]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/options/HBoxContainer/login" to="." method="_on_login_pressed"]
+[connection signal="pressed" from="login/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/cancela" to="." method="_on_cancela_pressed"]
+[connection signal="pressed" from="login/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/entrar" to="." method="_on_entrar_pressed"]

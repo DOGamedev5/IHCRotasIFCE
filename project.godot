@@ -10,10 +10,15 @@ config_version=5
 
 [application]
 
-config/name="prototipo Rodolfo"
-run/main_scene="uid://66q2gh0peqpn"
+config/name="Rotas IFCEs"
+run/main_scene="uid://bqxycsdi7a1ss"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=648
+window/size/viewport_height=1152
 
 [physics]
 

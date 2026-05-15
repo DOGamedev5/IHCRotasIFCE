@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jr87qobe53uw"]
 
-[ext_resource type="Script" uid="uid://dhemhb8l7nsxm" path="res://src/onibusLister/rotaButton/rota_button.gd" id="1_53nl6"]
+[ext_resource type="Script" uid="uid://dhemhb8l7nsxm" path="res://src/classes/rotaButton/rota_button.gd" id="1_53nl6"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y6mnl"]
 

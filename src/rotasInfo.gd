@@ -14,12 +14,12 @@ extends HBoxContainer
 	RotaObject.new("A", "22:10", 24, [0, 1, 19, 20, 10, 9, 4, 22, 2, 3, 19]),
 	RotaObject.new("B", "22:10", 22, [0, 1, 20, 15, 3, 12, 13, 14, 3, 20, 18, 5, 4])
 ]
-@onready var rotaSelectScene := preload("res://src/onibusLister/rotaButton/rotaButton.tscn")
+@onready var rotaSelectScene := preload("res://src/classes/rotaButton/rotaButton.tscn")
 
-@onready var buttonListNode := $margin/list
+@export var buttonListNode : Control
 @onready var buttonListReference := []
 
-@onready var reservarAcentos := $acentos
+@export var reservarAcentos : Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
