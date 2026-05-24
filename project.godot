@@ -17,10 +17,6 @@ boot_splash/bg_color=Color(0.015979346, 0.08463544, 0.062644035, 1)
 boot_splash/image="uid://bjp8pim4bvtb"
 config/icon="uid://dwam0qu2e3ler"
 
-[display]
-
-window/stretch/mode="viewport"
-
 [global]
 
 isMobile=true
