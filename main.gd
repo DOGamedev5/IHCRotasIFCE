@@ -4,6 +4,13 @@ extends Control
 @onready var mobile := preload("res://src/mobileMain/main.tscn")
 
 @onready var main : Node
+enum loginState {
+	OFFLINE,
+	ALUNO,
+	MOTORISTA
+}
+
+@onready var hasLogin : loginState = loginState.OFFLINE
 
 func _ready() -> void:
 	
@@ -13,7 +20,9 @@ func _ready() -> void:
 	else:
 		main = desktop.instantiate()
 		ProjectSettings.set("global/isMobile", false)
-		
-	
 	
 	add_child(main)
+
+func isAluno(): return hasLogin == loginState.ALUNO
+func isMotorista(): return hasLogin == loginState.ALUNO
+func setLoginState(state): hasLogin = state 

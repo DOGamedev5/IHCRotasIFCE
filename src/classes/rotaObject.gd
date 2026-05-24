@@ -27,8 +27,15 @@ func _init(Nome : String, Horario : String, tamanho : int, setupOcupado : Array[
 	acentosOcupadosSetup(setupOcupado)
 
 func reservarAcento(id : int):
+	
 	if acentos[id] == ACENTO_STATUS.VAZIO:
 		acentos[id] = ACENTO_STATUS.RESERVADO
+		print("AAAA")
+		for i in range(acentos.size()):
+			if acentos[i] == ACENTO_STATUS.RESERVADO and i != id:
+				acentos[i] = ACENTO_STATUS.VAZIO
+				print("BBBB")
+			
 
 func acentosOcupadosSetup(listID : Array[int]):
 	for i in listID: acentos[i] = ACENTO_STATUS.OCUPADO_OUTRO

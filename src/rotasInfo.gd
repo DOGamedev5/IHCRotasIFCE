@@ -30,6 +30,7 @@ func _ready() -> void:
 		#buttonListReference.append(button)
 		button.connect("selected", rotaSelected)
 	
+	reservarAcentos.updateInfo.connect(updateInfo)
 	if not ProjectSettings.get("global/isMobile"): buttonListNode.get_children()[0].button_pressed = true
 
 func rotaSelected(id : int, button : Button):
@@ -37,7 +38,8 @@ func rotaSelected(id : int, button : Button):
 		if btn != button or ProjectSettings.get("global/isMobile"):
 			btn.button_pressed = false
 	
-	reservarAcentos.setup(rotas[button.id])
+	reservarAcentos.setup(rotas[button.id], button.id)
+	
 	changeMobileMode(false)
 
 func changeMobileMode(rotaList : bool):
@@ -49,3 +51,6 @@ func changeMobileMode(rotaList : bool):
 
 func _on_voltar_pressed() -> void:
 	changeMobileMode(true)
+
+func updateInfo(data, id):
+	rotas[id].reservarAcento(data)

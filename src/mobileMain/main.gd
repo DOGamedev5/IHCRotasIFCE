@@ -33,3 +33,4 @@ func _on_cancela_pressed() -> void:
 func _on_entrar_pressed() -> void:
 	loginTab.visible = false
 	$MarginContainer/VBoxContainer/options/HBoxContainer/login.text = "mudar de conta"
+	get_tree().current_scene.setLoginState(1)
