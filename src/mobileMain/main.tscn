@@ -3,6 +3,9 @@
 [ext_resource type="Script" uid="uid://cnj6jrxyohyr4" path="res://src/mobileMain/main.gd" id="1_ebm5i"]
 [ext_resource type="Script" uid="uid://vbros6c8dgvj" path="res://src/rotasInfo.gd" id="2_debxh"]
 [ext_resource type="PackedScene" uid="uid://damlntl5je3qg" path="res://src/reservasVisualize/acentos.tscn" id="3_y6j25"]
+[ext_resource type="Texture2D" uid="uid://cvmdc33mg7drs" path="res://resources/icons/avisos.svg" id="4_debxh"]
+[ext_resource type="Texture2D" uid="uid://coxy38ko3xrt" path="res://resources/icons/rotas.svg" id="5_pr2xw"]
+[ext_resource type="Texture2D" uid="uid://b5na5ljfcpc32" path="res://resources/icons/login-cadeado.svg" id="6_004wd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dm0k"]
 bg_color = Color(0, 0, 0, 0.47058824)
@@ -253,7 +256,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/options" unique_id=2139423984]
 layout_mode = 2
-theme_override_constants/separation = 16
+theme_override_constants/separation = 32
 alignment = 1
 
 [node name="avisos" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=28752929]
@@ -267,7 +270,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
 toggle_mode = true
-text = "Avisos"
+icon = ExtResource("4_debxh")
 
 [node name="rotas" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=1463642080]
 custom_minimum_size = Vector2(0, 32)
@@ -281,7 +284,7 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
 toggle_mode = true
 button_pressed = true
-text = "Visualizar e Reservar"
+icon = ExtResource("5_pr2xw")
 
 [node name="login" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=1737918610]
 custom_minimum_size = Vector2(0, 32)
@@ -293,7 +296,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
-text = "Login"
+icon = ExtResource("6_004wd")
 
 [node name="login" type="ColorRect" parent="." unique_id=455110791]
 visible = false
