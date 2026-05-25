@@ -3,6 +3,10 @@
 [ext_resource type="Script" uid="uid://duwa757d4bvwd" path="res://src/reservasVisualize/acentos.gd" id="1_r6n58"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ig7tw"]
+content_margin_left = 8.0
+content_margin_top = 4.0
+content_margin_right = 8.0
+content_margin_bottom = 4.0
 bg_color = Color(0.15090796, 0.4523279, 0.32898548, 1)
 corner_radius_top_left = 8
 corner_radius_top_right = 8
@@ -96,12 +100,13 @@ alignment = 1
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_constants/h_separation = 4
 theme_override_font_sizes/font_size = 18
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
-text = "Reservar Assento"
+text = " Reservar Assento"
 
 [connection signal="pressed" from="content/buttons/reserva" to="." method="_on_reserva_pressed"]

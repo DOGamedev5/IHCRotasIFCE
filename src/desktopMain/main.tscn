@@ -296,7 +296,6 @@ text = "[color=yellow]Aviso: [/color] Onibus B 22:00 não poderá fazer a rota c
 [color=orange]Feriado: [/color] Os onibus não irão fazer a rota no proximo feriado no dia DD/MM/AAAA, portanto não haverá aulas nesse dia."
 
 [node name="login" type="ColorRect" parent="." unique_id=455110791]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
