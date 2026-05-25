@@ -16,8 +16,8 @@ signal updateInfo(data, id : int)
 
 func _ready() -> void:
 	if ProjectSettings.get("global/isMobile"):
-		textName.add_theme_font_size_override("font_size", 48)
-		reservBtn.add_theme_font_size_override("font_size", 36)
+		textName.add_theme_font_size_override("font_size", 48+18)
+		reservBtn.add_theme_font_size_override("font_size", 36+18+9)
 
 func setup(info : RotaObject, id : int):
 	textName.text = "ÔNIBUS {0} -> {1}".format([info.nome, info.horario])

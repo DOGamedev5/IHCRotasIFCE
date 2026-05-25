@@ -56,6 +56,12 @@ corner_radius_bottom_left = 8
 expand_margin_left = 4.0
 expand_margin_right = 4.0
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_l7oil"]
+color = Color(0.9817568, 1, 0.22658296, 0.68600005)
+grow_begin = -16.0
+grow_end = -16.0
+vertical = true
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
 bg_color = Color(0, 0.41570994, 0.2305767, 1)
 corner_radius_top_left = 16
@@ -217,6 +223,11 @@ theme_override_constants/margin_bottom = 16
 [node name="list" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin" unique_id=283445893]
 layout_mode = 2
 
+[node name="ColorRect" type="VSeparator" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=817595376]
+layout_mode = 2
+theme_override_constants/separation = 6
+theme_override_styles/separator = SubResource("StyleBoxLine_l7oil")
+
 [node name="rotaInfo" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=1953457855]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -243,6 +254,11 @@ text = "- Nova Acopiara
 - Predio do Padre (ponto de onibus)
 - Posto Acopiara
 - Nossa Senhora Aparecida"
+
+[node name="ColorRect2" type="VSeparator" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=1508144598]
+layout_mode = 2
+theme_override_constants/separation = 6
+theme_override_styles/separator = SubResource("StyleBoxLine_l7oil")
 
 [node name="acentos" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=1835582175 instance=ExtResource("3_h2yge")]
 layout_mode = 2
@@ -280,6 +296,7 @@ text = "[color=yellow]Aviso: [/color] Onibus B 22:00 não poderá fazer a rota c
 [color=orange]Feriado: [/color] Os onibus não irão fazer a rota no proximo feriado no dia DD/MM/AAAA, portanto não haverá aulas nesse dia."
 
 [node name="login" type="ColorRect" parent="." unique_id=455110791]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

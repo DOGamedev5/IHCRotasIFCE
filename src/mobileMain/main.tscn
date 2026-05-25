@@ -114,7 +114,7 @@ corner_radius_bottom_left = 8
 expand_margin_left = 4.0
 expand_margin_right = 4.0
 
-[node name="Control" type="Control" unique_id=2007933320]
+[node name="Control2" type="Control" unique_id=2007933320]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -262,6 +262,7 @@ alignment = 1
 [node name="avisos" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=28752929]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
@@ -275,6 +276,7 @@ icon = ExtResource("4_debxh")
 [node name="rotas" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=1463642080]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
@@ -289,6 +291,7 @@ icon = ExtResource("5_pr2xw")
 [node name="login" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=1737918610]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
+size_flags_horizontal = 6
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
@@ -296,6 +299,7 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
+text = "entrar "
 icon = ExtResource("6_004wd")
 
 [node name="login" type="ColorRect" parent="." unique_id=455110791]
