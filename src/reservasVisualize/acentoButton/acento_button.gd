@@ -4,8 +4,8 @@ signal selected(id : int)
 
 func _ready() -> void:
 	if ProjectSettings.get("global/isMobile"):
-		add_theme_font_size_override("font_size", 86)
-		custom_minimum_size = Vector2(48*4, 48*4)
+		add_theme_font_size_override("font_size", 62)
+		custom_minimum_size = Vector2(48*3, 48*3)
 
 func setup(id : int, occupied : bool, reserved : bool):
 	text = str(id)

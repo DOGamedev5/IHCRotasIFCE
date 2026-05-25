@@ -21,6 +21,31 @@ extends BoxContainer
 
 @export var reservarAcentos : Control
 
+@onready var rotasOnibus := {
+	"A" : [
+		"Nova Acopiara",
+		"Centro de Nutrição de Acopiara",
+		"Posto desativado",
+		"Predio do Padre",
+		"Posto Acopiara",
+		"Posto Ipiranga",
+		"Nossa senhora Aparecida",
+		"IFCE - destino Final"
+	],
+	"B" : [
+		"Vila Esperança",
+		"Praça",
+		"Centro de Acopiara",
+		"Liceu",
+		"Rodoviaria",
+		"Posto Ipiranga",
+		"Nossa senhora Aparecida",
+		"IFCE - destino Final"
+	]
+}
+
+@onready var rotaLabel := $rotaInfo/info/rota
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in rotas.size():
@@ -39,6 +64,14 @@ func rotaSelected(id : int, button : Button):
 			btn.button_pressed = false
 	
 	reservarAcentos.setup(rotas[button.id], button.id)
+	
+	if rotasOnibus.has(rotas[button.id].nome):
+		
+		var text := ""
+		for r in rotasOnibus[rotas[button.id].nome]:
+			text += "- " + r + "\n"
+		
+		rotaLabel.text = text
 	
 	changeMobileMode(false)
 
