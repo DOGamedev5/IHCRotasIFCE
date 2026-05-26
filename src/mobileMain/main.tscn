@@ -157,7 +157,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
 [node name="rotasInfo" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize" unique_id=1443815512 node_paths=PackedStringArray("buttonListNode", "reservarAcentos")]
 layout_mode = 2
 script = ExtResource("2_debxh")
-buttonListNode = NodePath("margin/list")
+buttonListNode = NodePath("margin/VBoxContainer/list")
 reservarAcentos = NodePath("acentos")
 
 [node name="margin" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=635051732]
@@ -167,7 +167,17 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="list" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin" unique_id=283445893]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin" unique_id=2072855297]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer" unique_id=906347056]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8833333, 1, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "SELECIONE ABAIXO"
+uppercase = true
+
+[node name="list" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer" unique_id=283445893]
 layout_mode = 2
 
 [node name="voltar" type="Button" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=2117136393]
@@ -320,9 +330,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 64
-theme_override_constants/margin_top = 256
+theme_override_constants/margin_top = 512
 theme_override_constants/margin_right = 64
-theme_override_constants/margin_bottom = 384
+theme_override_constants/margin_bottom = 640
 
 [node name="PanelContainer" type="PanelContainer" parent="login/login" unique_id=25951452]
 layout_mode = 2

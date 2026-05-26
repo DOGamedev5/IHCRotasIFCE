@@ -18,9 +18,10 @@ func _ready() -> void:
 	if ProjectSettings.get("global/isMobile"):
 		textName.add_theme_font_size_override("font_size", 48+18)
 		reservBtn.add_theme_font_size_override("font_size", 36+18+9)
+		reservBtn.text = " Reservar Assento "
 
 func setup(info : RotaObject, id : int):
-	textName.text = "ÔNIBUS {0} -> {1}".format([info.nome, info.horario])
+	textName.text = "ÔNIBUS {0} > {1}".format([info.nome, info.horario])
 	currentID = id
 	_clearLists()
 	_create_buttons(info)
