@@ -13,6 +13,7 @@ extends MarginContainer
 @onready var currentID := 0
 
 signal updateInfo(data, id : int)
+signal requestLogin()
 
 func _ready() -> void:
 	if ProjectSettings.get("global/isMobile"):
@@ -27,8 +28,9 @@ func setup(info : RotaObject, id : int):
 	_create_buttons(info)
 
 func _process(_delta: float) -> void:
-	var canReserve : bool = get_tree().current_scene.isAluno()
-	reservBtn.disabled = not canReserve or not hasChanged
+	#var canReserve : bool = get_tree().current_scene.isAluno()
+	#reservBtn.disabled = not canReserve or not hasChanged
+	reservBtn.disabled = not hasChanged
 
 func _create_buttons(info : RotaObject):
 	var listSize : float = float(info.totalAcentos) / 2
@@ -56,8 +58,13 @@ func _clearLists():
 	hasChanged = false
 
 func _on_reserva_pressed() -> void:
-	hasChanged = false
-	updateInfo.emit(currentAcento, currentID)
+	var canReserve : bool = get_tree().current_scene.isAluno()
+	
+	if canReserve:
+		hasChanged = false
+		updateInfo.emit(currentAcento, currentID)
+	else:
+		requestLogin.emit()
 	
 func acentoEscolhido(id: int):
 	for btn : Button in listLeft.get_children():
@@ -70,3 +77,6 @@ func acentoEscolhido(id: int):
 	
 	currentAcento = id-1
 	hasChanged = true
+
+func _on_login() -> void:
+	if hasChanged: _on_reserva_pressed()

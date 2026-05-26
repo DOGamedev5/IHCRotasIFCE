@@ -59,6 +59,57 @@ corner_radius_bottom_left = 8
 expand_margin_left = 4.0
 expand_margin_right = 4.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7oil"]
+bg_color = Color(0.27223206, 0.66796875, 0.343341, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdbf6"]
+bg_color = Color(0.54970604, 0.85026044, 0.46166486, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7e5y"]
+bg_color = Color(0.24096851, 0.49088544, 0.43426365, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mwjd"]
+bg_color = Color(0.11207495, 0.09985284, 0.14733289, 0.72)
+expand_margin_left = 14.0
+expand_margin_right = 14.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arihd"]
+bg_color = Color(0.23136564, 0.23752816, 0.31901044, 0.72156864)
+expand_margin_left = 14.0
+expand_margin_right = 14.0
+
+[sub_resource type="Theme" id="Theme_pr2xw"]
+VScrollBar/constants/padding_left = 2
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_l7oil")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_rdbf6")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_e7e5y")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_2mwjd")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_arihd")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
 bg_color = Color(0, 0.41570994, 0.2305767, 1)
 corner_radius_top_left = 16
@@ -154,11 +205,13 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
 
-[node name="rotasInfo" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize" unique_id=1443815512 node_paths=PackedStringArray("buttonListNode", "reservarAcentos")]
+[node name="rotasInfo" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize" unique_id=1443815512 node_paths=PackedStringArray("buttonListNode", "reservarAcentos", "scrollThing", "rotaLabel")]
 layout_mode = 2
 script = ExtResource("2_debxh")
-buttonListNode = NodePath("margin/VBoxContainer/list")
-reservarAcentos = NodePath("acentos")
+buttonListNode = NodePath("margin/VBoxContainer/ScrollContainer/list")
+reservarAcentos = NodePath("ScrollContainer/VBoxContainer/acentos")
+scrollThing = NodePath("ScrollContainer")
+rotaLabel = NodePath("ScrollContainer/VBoxContainer/rotaInfo/info/rota")
 
 [node name="margin" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=635051732]
 layout_mode = 2
@@ -173,12 +226,21 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer" unique_id=906347056]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8833333, 1, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "SELECIONE ABAIXO"
 uppercase = true
 
-[node name="list" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer" unique_id=283445893]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer" unique_id=1373409691]
+clip_contents = false
 layout_mode = 2
+size_flags_vertical = 3
+scroll_horizontal_custom_step = 0.0
+horizontal_scroll_mode = 0
+
+[node name="list" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer/ScrollContainer" unique_id=283445893]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="voltar" type="Button" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=2117136393]
 visible = false
@@ -194,8 +256,18 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
 toggle_mode = true
 text = "Voltar"
 
-[node name="rotaInfo" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=1953457855]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=1885232938]
 visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_pr2xw")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer" unique_id=820719457]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="rotaInfo" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer" unique_id=1953457855]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 16
@@ -203,19 +275,19 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="info" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/rotaInfo" unique_id=1976261396]
+[node name="info" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer/rotaInfo" unique_id=1976261396]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/rotaInfo/info" unique_id=350351431]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer/rotaInfo/info" unique_id=350351431]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8833333, 1, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "ROTA EFETUADA"
 uppercase = true
 
-[node name="rota" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/rotaInfo/info" unique_id=982777317]
+[node name="rota" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer/rotaInfo/info" unique_id=982777317]
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 56
 text = "- Nova Acopiara
 - Centro de Nutrição de Acopiara
 - Posto desativado
@@ -223,8 +295,7 @@ text = "- Nova Acopiara
 - Posto Acopiara
 - Nossa Senhora Aparecida"
 
-[node name="acentos" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=1835582175 instance=ExtResource("3_y6j25")]
-visible = false
+[node name="acentos" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer" unique_id=1835582175 instance=ExtResource("3_y6j25")]
 layout_mode = 2
 
 [node name="avisos" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize" unique_id=1783114629]
@@ -405,7 +476,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
 text = "Entrar"
 
+[connection signal="onLogin" from="." to="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer/acentos" method="_on_login"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/visualize/rotasInfo/voltar" to="MarginContainer/VBoxContainer/visualize/rotasInfo" method="_on_voltar_pressed"]
+[connection signal="requestLogin" from="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer/acentos" to="." method="_on_acentos_request_login"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/avisos" to="." method="tab_changed" binds= [1]]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/rotas" to="." method="tab_changed" binds= [0]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/options/HBoxContainer/login" to="." method="_on_login_pressed"]
