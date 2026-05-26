@@ -21,7 +21,7 @@ func _ready() -> void:
 		reservBtn.text = " Reservar Assento "
 
 func setup(info : RotaObject, id : int):
-	textName.text = "ÔNIBUS {0} ➔ {1}".format([info.nome, info.horario])
+	textName.text = "ÔNIBUS {0} > {1}".format([info.nome, info.horario])
 	currentID = id
 	_clearLists()
 	_create_buttons(info)
