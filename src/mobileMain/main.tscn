@@ -59,6 +59,57 @@ corner_radius_bottom_left = 8
 expand_margin_left = 4.0
 expand_margin_right = 4.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7oil"]
+bg_color = Color(0.27223206, 0.66796875, 0.343341, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdbf6"]
+bg_color = Color(0.54970604, 0.85026044, 0.46166486, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7e5y"]
+bg_color = Color(0.24096851, 0.49088544, 0.43426365, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mwjd"]
+bg_color = Color(0.11207495, 0.09985284, 0.14733289, 0.72)
+expand_margin_left = 14.0
+expand_margin_right = 14.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arihd"]
+bg_color = Color(0.23136564, 0.23752816, 0.31901044, 0.72156864)
+expand_margin_left = 14.0
+expand_margin_right = 14.0
+
+[sub_resource type="Theme" id="Theme_pr2xw"]
+VScrollBar/constants/padding_left = 2
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_l7oil")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_rdbf6")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_e7e5y")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_2mwjd")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_arihd")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
 bg_color = Color(0, 0.41570994, 0.2305767, 1)
 corner_radius_top_left = 16
@@ -192,6 +243,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="voltar" type="Button" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=2117136393]
+visible = false
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_vertical = 4
@@ -205,8 +257,10 @@ toggle_mode = true
 text = "Voltar"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=1885232938]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
+theme = SubResource("Theme_pr2xw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer" unique_id=820719457]
 layout_mode = 2
@@ -227,13 +281,13 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer/rotaInfo/info" unique_id=350351431]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8833333, 1, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "ROTA EFETUADA"
 uppercase = true
 
 [node name="rota" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer/rotaInfo/info" unique_id=982777317]
 layout_mode = 2
-theme_override_font_sizes/font_size = 28
+theme_override_font_sizes/font_size = 56
 text = "- Nova Acopiara
 - Centro de Nutrição de Acopiara
 - Posto desativado

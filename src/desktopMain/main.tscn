@@ -56,6 +56,57 @@ corner_radius_bottom_left = 8
 expand_margin_left = 4.0
 expand_margin_right = 4.0
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l7oil"]
+bg_color = Color(0.27223206, 0.66796875, 0.343341, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rdbf6"]
+bg_color = Color(0.54970604, 0.85026044, 0.46166486, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e7e5y"]
+bg_color = Color(0.24096851, 0.49088544, 0.43426365, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2mwjd"]
+bg_color = Color(0.11207495, 0.09985284, 0.14733289, 0.72)
+expand_margin_left = 14.0
+expand_margin_right = 14.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_arihd"]
+bg_color = Color(0.23136564, 0.23752816, 0.31901044, 0.72156864)
+expand_margin_left = 14.0
+expand_margin_right = 14.0
+
+[sub_resource type="Theme" id="Theme_hr28e"]
+VScrollBar/constants/padding_left = 2
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_l7oil")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_rdbf6")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_e7e5y")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_2mwjd")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_arihd")
+
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_l7oil"]
 color = Color(0.9817568, 1, 0.22658296, 0.68600005)
 grow_begin = -16.0
@@ -234,6 +285,7 @@ uppercase = true
 [node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer" unique_id=631505906]
 layout_mode = 2
 size_flags_vertical = 3
+theme = SubResource("Theme_hr28e")
 horizontal_scroll_mode = 0
 
 [node name="list" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer/ScrollContainer" unique_id=283445893]
@@ -314,6 +366,7 @@ text = "[color=yellow]Aviso: [/color] Onibus B 22:00 não poderá fazer a rota c
 [color=orange]Feriado: [/color] Os onibus não irão fazer a rota no proximo feriado no dia DD/MM/AAAA, portanto não haverá aulas nesse dia."
 
 [node name="login" type="ColorRect" parent="." unique_id=455110791]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
