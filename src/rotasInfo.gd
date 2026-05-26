@@ -20,6 +20,7 @@ extends BoxContainer
 @onready var buttonListReference := []
 
 @export var reservarAcentos : Control
+@export var scrollThing : Control
 
 @onready var rotasOnibus := {
 	"A" : [
@@ -44,7 +45,7 @@ extends BoxContainer
 	]
 }
 
-@onready var rotaLabel := $rotaInfo/info/rota
+@export var rotaLabel : Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -78,9 +79,10 @@ func rotaSelected(id : int, button : Button):
 func changeMobileMode(rotaList : bool):
 	if ProjectSettings.get("global/isMobile"):
 		$margin.visible = rotaList
+		if scrollThing: scrollThing.visible = not rotaList
 		$voltar.visible = not rotaList
-		$rotaInfo.visible = not rotaList
-		$acentos.visible = not rotaList
+		#$rotaInfo.visible = not rotaList
+		#$acentos.visible = not rotaList
 
 func _on_voltar_pressed() -> void:
 	changeMobileMode(true)

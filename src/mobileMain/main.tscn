@@ -154,11 +154,13 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
 
-[node name="rotasInfo" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize" unique_id=1443815512 node_paths=PackedStringArray("buttonListNode", "reservarAcentos")]
+[node name="rotasInfo" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize" unique_id=1443815512 node_paths=PackedStringArray("buttonListNode", "reservarAcentos", "scrollThing", "rotaLabel")]
 layout_mode = 2
 script = ExtResource("2_debxh")
-buttonListNode = NodePath("margin/VBoxContainer/list")
-reservarAcentos = NodePath("acentos")
+buttonListNode = NodePath("margin/VBoxContainer/ScrollContainer/list")
+reservarAcentos = NodePath("ScrollContainer/VBoxContainer/acentos")
+scrollThing = NodePath("ScrollContainer")
+rotaLabel = NodePath("ScrollContainer/VBoxContainer/rotaInfo/info/rota")
 
 [node name="margin" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=635051732]
 layout_mode = 2
@@ -173,15 +175,23 @@ layout_mode = 2
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer" unique_id=906347056]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8833333, 1, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 64
 text = "SELECIONE ABAIXO"
 uppercase = true
 
-[node name="list" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer" unique_id=283445893]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer" unique_id=1373409691]
+clip_contents = false
 layout_mode = 2
+size_flags_vertical = 3
+scroll_horizontal_custom_step = 0.0
+horizontal_scroll_mode = 0
+
+[node name="list" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer/ScrollContainer" unique_id=283445893]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="voltar" type="Button" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=2117136393]
-visible = false
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
 size_flags_vertical = 4
@@ -194,8 +204,16 @@ theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
 toggle_mode = true
 text = "Voltar"
 
-[node name="rotaInfo" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=1953457855]
-visible = false
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=1885232938]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer" unique_id=820719457]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="rotaInfo" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer" unique_id=1953457855]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 16
@@ -203,17 +221,17 @@ theme_override_constants/margin_top = 16
 theme_override_constants/margin_right = 16
 theme_override_constants/margin_bottom = 16
 
-[node name="info" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/rotaInfo" unique_id=1976261396]
+[node name="info" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer/rotaInfo" unique_id=1976261396]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/rotaInfo/info" unique_id=350351431]
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer/rotaInfo/info" unique_id=350351431]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.8833333, 1, 0, 1)
 theme_override_font_sizes/font_size = 32
 text = "ROTA EFETUADA"
 uppercase = true
 
-[node name="rota" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/rotaInfo/info" unique_id=982777317]
+[node name="rota" type="Label" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer/rotaInfo/info" unique_id=982777317]
 layout_mode = 2
 theme_override_font_sizes/font_size = 28
 text = "- Nova Acopiara
@@ -223,8 +241,7 @@ text = "- Nova Acopiara
 - Posto Acopiara
 - Nossa Senhora Aparecida"
 
-[node name="acentos" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=1835582175 instance=ExtResource("3_y6j25")]
-visible = false
+[node name="acentos" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer" unique_id=1835582175 instance=ExtResource("3_y6j25")]
 layout_mode = 2
 
 [node name="avisos" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize" unique_id=1783114629]

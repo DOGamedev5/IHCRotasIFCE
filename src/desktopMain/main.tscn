@@ -206,11 +206,12 @@ layout_mode = 2
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
 
-[node name="rotasInfo" type="HBoxContainer" parent="MarginContainer/VBoxContainer/visualize" unique_id=1520495363 node_paths=PackedStringArray("buttonListNode", "reservarAcentos")]
+[node name="rotasInfo" type="HBoxContainer" parent="MarginContainer/VBoxContainer/visualize" unique_id=1520495363 node_paths=PackedStringArray("buttonListNode", "reservarAcentos", "rotaLabel")]
 layout_mode = 2
 script = ExtResource("2_0xm2m")
-buttonListNode = NodePath("margin/VBoxContainer/list")
+buttonListNode = NodePath("margin/VBoxContainer/ScrollContainer/list")
 reservarAcentos = NodePath("acentos")
+rotaLabel = NodePath("rotaInfo/info/rota")
 
 [node name="margin" type="MarginContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=635051732]
 layout_mode = 2
@@ -230,8 +231,15 @@ theme_override_font_sizes/font_size = 24
 text = "selecione abaixo:"
 uppercase = true
 
-[node name="list" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer" unique_id=283445893]
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer" unique_id=631505906]
 layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="list" type="VBoxContainer" parent="MarginContainer/VBoxContainer/visualize/rotasInfo/margin/VBoxContainer/ScrollContainer" unique_id=283445893]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="ColorRect" type="VSeparator" parent="MarginContainer/VBoxContainer/visualize/rotasInfo" unique_id=817595376]
 layout_mode = 2
