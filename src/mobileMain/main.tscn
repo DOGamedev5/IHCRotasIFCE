@@ -476,7 +476,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
 text = "Entrar"
 
+[connection signal="onLogin" from="." to="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer/acentos" method="_on_login"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/visualize/rotasInfo/voltar" to="MarginContainer/VBoxContainer/visualize/rotasInfo" method="_on_voltar_pressed"]
+[connection signal="requestLogin" from="MarginContainer/VBoxContainer/visualize/rotasInfo/ScrollContainer/VBoxContainer/acentos" to="." method="_on_acentos_request_login"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/avisos" to="." method="tab_changed" binds= [1]]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/rotas" to="." method="tab_changed" binds= [0]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/options/HBoxContainer/login" to="." method="_on_login_pressed"]
