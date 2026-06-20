@@ -49,3 +49,20 @@ func _on_entrar_pressed() -> void:
 func _on_acentos_request_login() -> void:
 	_on_login_pressed()
 	isLoginRequested = true
+
+func _on_signin_pressed() -> void:
+	pass # Replace with fuction body.
+
+func _on_criarConta_pressed() -> void:
+	loginTab.visible = false
+	$MarginContainer/VBoxContainer/options/HBoxContainer/login.text = "mudar de conta"
+	var scene = get_tree().current_scene
+
+	if scene.getLoginState() == 1:
+		tabs[0].refreshSeatsState()
+	else:
+		get_tree().current_scene.setLoginState(1)
+		
+	if isLoginRequested:
+		onLogin.emit()
+		isLoginRequested = false

@@ -130,8 +130,6 @@ corner_radius_top_right = 12
 corner_radius_bottom_right = 12
 corner_radius_bottom_left = 12
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2yge"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w48qg"]
 bg_color = Color(0.029770194, 0.15295678, 0.10302677, 1)
 corner_radius_top_left = 8
@@ -167,6 +165,8 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 expand_margin_left = 4.0
 expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2yge"]
 
 [node name="Control" type="Control" unique_id=2007933320]
 layout_mode = 3
@@ -249,7 +249,19 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
 theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
-text = "Login"
+text = "Entrar"
+
+[node name="signin" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=1823204835]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
+text = "criar conta"
 
 [node name="visualize" type="PanelContainer" parent="MarginContainer/VBoxContainer" unique_id=665339074]
 custom_minimum_size = Vector2(0, 48)
@@ -366,7 +378,6 @@ text = "[color=yellow]Aviso: [/color] Onibus B 22:00 não poderá fazer a rota c
 [color=orange]Feriado: [/color] Os onibus não irão fazer a rota no proximo feriado no dia DD/MM/AAAA, portanto não haverá aulas nesse dia."
 
 [node name="login" type="ColorRect" parent="." unique_id=455110791]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -406,7 +417,7 @@ theme_override_constants/separation = 16
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 32
-text = "Login"
+text = "ENTRAR NA CONTA"
 horizontal_alignment = 1
 uppercase = true
 
@@ -422,6 +433,20 @@ theme_override_font_sizes/font_size = 32
 theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
 placeholder_text = "Senha"
 secret = true
+
+[node name="signininstead" type="Button" parent="login/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1252382345]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
+text = "criar uma conta em vez disso"
 
 [node name="HSeparator" type="HSeparator" parent="login/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1446714383]
 layout_mode = 2
@@ -457,10 +482,127 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
 text = "Entrar"
 
+[node name="signin" type="ColorRect" parent="." unique_id=609358133]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.58431375)
+
+[node name="login" type="MarginContainer" parent="signin" unique_id=1033099274]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 192
+
+[node name="PanelContainer" type="PanelContainer" parent="signin/login" unique_id=881536107]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_dg77c")
+
+[node name="MarginContainer" type="MarginContainer" parent="signin/login/PanelContainer" unique_id=1063057852]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="signin/login/PanelContainer/MarginContainer" unique_id=973790693]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=144312778]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "CRIAR CONTA"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="matricula" type="LineEdit" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1392788475]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
+placeholder_text = "Matricula"
+
+[node name="senha" type="LineEdit" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=700720482]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
+placeholder_text = "Senha"
+secret = true
+
+[node name="senha2" type="LineEdit" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=141120105]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
+placeholder_text = "Confirmar Senha"
+secret = true
+
+[node name="signininstead" type="Button" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=835428054]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
+text = "ja tem uma conta? entrar."
+
+[node name="HSeparator" type="HSeparator" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1605267692]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_h2yge")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=2069225059]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="cancela" type="Button" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1824157320]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
+text = "cancelar"
+
+[node name="criar" type="Button" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1948083236]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
+text = "Criar conta"
+
 [connection signal="onLogin" from="." to="MarginContainer/VBoxContainer/visualize/rotasInfo/acentos" method="_on_login"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/avisos" to="." method="tab_changed" binds= [1]]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/rotas" to="." method="tab_changed" binds= [0]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/options/HBoxContainer/login" to="." method="_on_login_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/options/HBoxContainer/signin" to="." method="_on_signin_pressed"]
 [connection signal="requestLogin" from="MarginContainer/VBoxContainer/visualize/rotasInfo/acentos" to="." method="_on_acentos_request_login"]
+[connection signal="pressed" from="login/login/PanelContainer/MarginContainer/VBoxContainer/signininstead" to="." method="_on_signin_pressed"]
 [connection signal="pressed" from="login/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/cancela" to="." method="_on_cancela_pressed"]
 [connection signal="pressed" from="login/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/entrar" to="." method="_on_entrar_pressed"]
+[connection signal="pressed" from="signin/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/cancela" to="." method="_on_cancela_pressed"]
+[connection signal="pressed" from="signin/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/criar" to="." method="_on_criarConta_pressed"]

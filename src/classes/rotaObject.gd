@@ -40,6 +40,6 @@ func acentosOcupadosSetup(listID : Array[int]):
 	for i in listID: acentos[i] = ACENTO_STATUS.OCUPADO_OUTRO
 
 func resetAcentos():
-	for i in range(acentos):
+	for i in range(acentos.size()):
 		if acentos[i] == ACENTO_STATUS.RESERVADO:
 			acentos[i] = ACENTO_STATUS.OCUPADO_OUTRO
