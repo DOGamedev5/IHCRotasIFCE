@@ -10,6 +10,7 @@ extends MarginContainer
 @onready var cancelBtn := $content/buttons/cancel
 
 @onready var currentAcento := -1
+@onready var reservado := -1
 @onready var hasChanged := false
 @onready var currentID := 0
 
@@ -41,7 +42,10 @@ func _create_buttons(info : RotaObject):
 	for i in range(lSize): # começa no 0 e para no lSize - 1
 		var btn : AcentoButton = btnInstance.instantiate()
 		btn.setup(i + 1, info.acentos[i] == 1, info.acentos[i] == 2)
-		if info.acentos[i] == 2: currentAcento = i
+		if info.acentos[i] == 2:
+			reservado = i
+			currentAcento = i
+			btn.setLocked(true)
 		btn.selected.connect(acentoEscolhido)
 		
 		listLeft.add_child(btn)
@@ -49,7 +53,10 @@ func _create_buttons(info : RotaObject):
 	for i in range(lSize, lSize+rSize): # começa no lSize e para no lSize+rSize - 1
 		var btn : AcentoButton = btnInstance.instantiate()
 		btn.setup(i + 1, info.acentos[i] == 1, info.acentos[i] == 2)
-		if info.acentos[i] == 2: currentAcento = i
+		if info.acentos[i] == 2: 
+			reservado = i
+			currentAcento = i
+			btn.setLocked(true)
 		btn.selected.connect(acentoEscolhido)
 		
 		listRight.add_child(btn)
@@ -64,33 +71,47 @@ func _on_reserva_pressed() -> void:
 	
 	if canReserve:
 		hasChanged = false
+		reservado = currentAcento
+		for btn : Button in listLeft.get_children():
+			var ID = int(btn.text) - 1
+			btn.setLocked(reservado == ID)
+			btn.button_pressed = reservado == ID
+				
+		for btn : Button in listRight.get_children(): 
+			var ID = int(btn.text) - 1
+			btn.setLocked(reservado == ID)
+			btn.button_pressed = reservado == ID
+		
 		updateInfo.emit(currentAcento, currentID)
 	else:
 		requestLogin.emit()
 	
+	
 func acentoEscolhido(id: int):
+	currentAcento = id-1
+	
 	for btn : Button in listLeft.get_children():
 		var ID = int(btn.text)
-		if ID != id && btn.button_pressed: btn.button_pressed = false
+		if ID != id && btn.button_pressed: btn.button_pressed = (ID-1) == reservado
+		btn.setLocked((ID-1) == reservado and reservado != currentAcento)
 			
 	for btn : Button in listRight.get_children(): 
 		var ID = int(btn.text)
-		if ID != id && btn.button_pressed: btn.button_pressed = false
+		if ID != id && btn.button_pressed: btn.button_pressed = (ID-1) == reservado
+		btn.setLocked((ID-1) == reservado and reservado != currentAcento)
 	
-	currentAcento = id-1
-	hasChanged = true
+	hasChanged = reservado != currentAcento
 
 func _on_login() -> void:
 	if hasChanged: _on_reserva_pressed()
 
-
 func _on_cancel_pressed() -> void:
 	for btn : Button in listLeft.get_children():
 		var ID = int(btn.text)
-		btn.button_pressed = ID == currentAcento 
+		btn.button_pressed = (ID-1) == reservado 
 			
 	for btn : Button in listRight.get_children(): 
 		var ID = int(btn.text)
-		btn.button_pressed = ID == currentAcento 
+		btn.button_pressed = (ID-1) == reservado 
 		
 	hasChanged = false

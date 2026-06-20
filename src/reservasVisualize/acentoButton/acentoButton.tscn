@@ -50,6 +50,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_3tolc")
 theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_uyhuu")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_5vw27")
 toggle_mode = true
+button_pressed = true
 text = "15"
 script = ExtResource("1_uyhuu")
 
