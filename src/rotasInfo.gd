@@ -84,6 +84,10 @@ func changeMobileMode(rotaList : bool):
 		#$rotaInfo.visible = not rotaList
 		#$acentos.visible = not rotaList
 
+func refreshSeatsState():
+	for rota in rotas:
+		rota.resetAcentos()
+
 func _on_voltar_pressed() -> void:
 	changeMobileMode(true)
 

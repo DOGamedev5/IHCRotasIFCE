@@ -100,6 +100,19 @@ size_flags_vertical = 10
 theme_override_constants/separation = 32
 alignment = 1
 
+[node name="cancel" type="Button" parent="content/buttons" unique_id=1899114600]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
+text = "cancelar"
+
 [node name="reserva" type="Button" parent="content/buttons" unique_id=1206319958]
 custom_minimum_size = Vector2(0, 32)
 layout_mode = 2
@@ -113,4 +126,5 @@ theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
 theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
 text = " Reservar Assento"
 
+[connection signal="pressed" from="content/buttons/cancel" to="." method="_on_cancel_pressed"]
 [connection signal="pressed" from="content/buttons/reserva" to="." method="_on_reserva_pressed"]

@@ -7,6 +7,7 @@ extends MarginContainer
 @onready var textName := $content/Label
 
 @onready var reservBtn := $content/buttons/reserva
+@onready var cancelBtn := $content/buttons/cancel
 
 @onready var currentAcento := -1
 @onready var hasChanged := false
@@ -31,6 +32,7 @@ func _process(_delta: float) -> void:
 	#var canReserve : bool = get_tree().current_scene.isAluno()
 	#reservBtn.disabled = not canReserve or not hasChanged
 	reservBtn.disabled = not hasChanged
+	cancelBtn.disabled = not hasChanged
 
 func _create_buttons(info : RotaObject):
 	var listSize : float = float(info.totalAcentos) / 2
@@ -80,3 +82,15 @@ func acentoEscolhido(id: int):
 
 func _on_login() -> void:
 	if hasChanged: _on_reserva_pressed()
+
+
+func _on_cancel_pressed() -> void:
+	for btn : Button in listLeft.get_children():
+		var ID = int(btn.text)
+		btn.button_pressed = ID == currentAcento 
+			
+	for btn : Button in listRight.get_children(): 
+		var ID = int(btn.text)
+		btn.button_pressed = ID == currentAcento 
+		
+	hasChanged = false
