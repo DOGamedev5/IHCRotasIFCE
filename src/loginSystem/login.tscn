@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bjpvyexbarb5w"]
 
 [ext_resource type="Script" uid="uid://2cul7qnnss84" path="res://src/loginSystem/login.gd" id="1_s8204"]
+[ext_resource type="Texture2D" uid="uid://x648td1fvkbw" path="res://resources/icons/olho.svg" id="2_hy1rl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
 bg_color = Color(0.0476159, 0.26692706, 0.16968533, 1)
@@ -121,6 +122,8 @@ secret = true
 [node name="showSen" type="Button" parent="login/PanelContainer/MarginContainer/VBoxContainer/s" unique_id=1784161334]
 custom_minimum_size = Vector2(53, 53)
 layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.45108542, 0.51171875, 0.49824476, 1)
+icon = ExtResource("2_hy1rl")
 flat = true
 
 [node name="signininstead" type="Button" parent="login/PanelContainer/MarginContainer/VBoxContainer" unique_id=527449428]
