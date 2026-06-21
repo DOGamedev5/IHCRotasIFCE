@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dncr86gxieig8" path="res://src/desktopMain/main.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://vbros6c8dgvj" path="res://src/rotasInfo.gd" id="2_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://damlntl5je3qg" path="res://src/reservasVisualize/acentos.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://bjpvyexbarb5w" path="res://src/loginSystem/login.tscn" id="4_rdbf6"]
+[ext_resource type="PackedScene" uid="uid://dfw6r5xacddve" path="res://src/loginSystem/signin.tscn" id="5_e7e5y"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dm0k"]
 bg_color = Color(0, 0, 0, 0.47058824)
@@ -112,61 +114,6 @@ color = Color(0.9817568, 1, 0.22658296, 0.68600005)
 grow_begin = -16.0
 grow_end = -16.0
 vertical = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
-bg_color = Color(0, 0.41570994, 0.2305767, 1)
-corner_radius_top_left = 16
-corner_radius_top_right = 16
-corner_radius_bottom_right = 16
-corner_radius_bottom_left = 16
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycdy4"]
-content_margin_left = 8.0
-content_margin_top = 0.0
-content_margin_right = 8.0
-bg_color = Color(0.08, 0.08, 0.08, 0.8235294)
-corner_radius_top_left = 12
-corner_radius_top_right = 12
-corner_radius_bottom_right = 12
-corner_radius_bottom_left = 12
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w48qg"]
-bg_color = Color(0.029770194, 0.15295678, 0.10302677, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 4.0
-expand_margin_right = 4.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vivmo"]
-bg_color = Color(0.06451783, 0.23153761, 0.22160873, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 4.0
-expand_margin_right = 4.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cqfq"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 4.0
-expand_margin_right = 4.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yaehf"]
-bg_color = Color(0.07243662, 0.117710866, 0.11474667, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-expand_margin_left = 4.0
-expand_margin_right = 4.0
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2yge"]
 
 [node name="Control" type="Control" unique_id=2007933320]
 layout_mode = 3
@@ -377,232 +324,23 @@ bbcode_enabled = true
 text = "[color=yellow]Aviso: [/color] Onibus B 22:00 não poderá fazer a rota completa hoje, \"defeito no Pneu\", Onibus A: 22:00 irá fazer as duas rotas.
 [color=orange]Feriado: [/color] Os onibus não irão fazer a rota no proximo feriado no dia DD/MM/AAAA, portanto não haverá aulas nesse dia."
 
-[node name="login" type="ColorRect" parent="." unique_id=455110791]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.58431375)
-
-[node name="login" type="MarginContainer" parent="login" unique_id=1948990364]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 128
-theme_override_constants/margin_top = 128
-theme_override_constants/margin_right = 128
-theme_override_constants/margin_bottom = 192
-
-[node name="PanelContainer" type="PanelContainer" parent="login/login" unique_id=25951452]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dg77c")
-
-[node name="MarginContainer" type="MarginContainer" parent="login/login/PanelContainer" unique_id=825001421]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="VBoxContainer" type="VBoxContainer" parent="login/login/PanelContainer/MarginContainer" unique_id=1427611330]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Label" type="Label" parent="login/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=640387843]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 32
-text = "ENTRAR NA CONTA"
-horizontal_alignment = 1
-uppercase = true
-
-[node name="matricula" type="LineEdit" parent="login/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=867018421]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
-placeholder_text = "Matricula"
-
-[node name="senha" type="LineEdit" parent="login/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=313298740]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
-placeholder_text = "Senha"
-secret = true
-
-[node name="signininstead" type="Button" parent="login/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1252382345]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
-text = "criar uma conta em vez disso"
-
-[node name="HSeparator" type="HSeparator" parent="login/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1446714383]
-layout_mode = 2
-theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource("StyleBoxEmpty_h2yge")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="login/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1397224808]
-layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
-
-[node name="cancela" type="Button" parent="login/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=693523300]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
-text = "cancelar"
-
-[node name="entrar" type="Button" parent="login/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=93582687]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
-text = "Entrar"
-
-[node name="signin" type="ColorRect" parent="." unique_id=609358133]
+[node name="login" parent="." unique_id=420647821 instance=ExtResource("4_rdbf6")]
 visible = false
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0.58431375)
 
-[node name="login" type="MarginContainer" parent="signin" unique_id=1033099274]
+[node name="signin" parent="." unique_id=1950390930 instance=ExtResource("5_e7e5y")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 128
-theme_override_constants/margin_top = 128
-theme_override_constants/margin_right = 128
-theme_override_constants/margin_bottom = 192
 
-[node name="PanelContainer" type="PanelContainer" parent="signin/login" unique_id=881536107]
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_dg77c")
-
-[node name="MarginContainer" type="MarginContainer" parent="signin/login/PanelContainer" unique_id=1063057852]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="VBoxContainer" type="VBoxContainer" parent="signin/login/PanelContainer/MarginContainer" unique_id=973790693]
-layout_mode = 2
-theme_override_constants/separation = 16
-
-[node name="Label" type="Label" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=144312778]
-layout_mode = 2
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 32
-text = "CRIAR CONTA"
-horizontal_alignment = 1
-uppercase = true
-
-[node name="matricula" type="LineEdit" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1392788475]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
-placeholder_text = "Matricula"
-
-[node name="senha" type="LineEdit" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=700720482]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
-placeholder_text = "Senha"
-secret = true
-
-[node name="senha2" type="LineEdit" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=141120105]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
-placeholder_text = "Confirmar Senha"
-secret = true
-
-[node name="signininstead" type="Button" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=835428054]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 24
-theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
-text = "ja tem uma conta? entrar."
-
-[node name="HSeparator" type="HSeparator" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1605267692]
-layout_mode = 2
-theme_override_constants/separation = 16
-theme_override_styles/separator = SubResource("StyleBoxEmpty_h2yge")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer" unique_id=2069225059]
-layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
-
-[node name="cancela" type="Button" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1824157320]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
-text = "cancelar"
-
-[node name="criar" type="Button" parent="signin/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1948083236]
-custom_minimum_size = Vector2(0, 32)
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
-theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
-theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
-text = "Criar conta"
-
+[connection signal="onLogin" from="." to="MarginContainer/VBoxContainer/visualize/rotasInfo" method="_on_control_on_login"]
 [connection signal="onLogin" from="." to="MarginContainer/VBoxContainer/visualize/rotasInfo/acentos" method="_on_login"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/avisos" to="." method="tab_changed" binds= [1]]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/rotas" to="." method="tab_changed" binds= [0]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/options/HBoxContainer/login" to="." method="_on_login_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/options/HBoxContainer/signin" to="." method="_on_signin_pressed"]
 [connection signal="requestLogin" from="MarginContainer/VBoxContainer/visualize/rotasInfo/acentos" to="." method="_on_acentos_request_login"]
-[connection signal="pressed" from="login/login/PanelContainer/MarginContainer/VBoxContainer/signininstead" to="." method="_on_signin_pressed"]
-[connection signal="pressed" from="login/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/cancela" to="." method="_on_cancela_pressed"]
-[connection signal="pressed" from="login/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/entrar" to="." method="_on_entrar_pressed"]
-[connection signal="pressed" from="signin/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/cancela" to="." method="_on_cancela_pressed"]
-[connection signal="pressed" from="signin/login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/criar" to="." method="_on_criarConta_pressed"]
+[connection signal="logCancel" from="login" to="." method="_on_cancela_pressed"]
+[connection signal="loged" from="login" to="." method="_on_entrar_pressed"]
+[connection signal="signInstead" from="login" to="." method="_on_signin_pressed"]
+[connection signal="logCancel" from="signin" to="." method="_on_cancela_pressed"]
+[connection signal="loged" from="signin" to="." method="_on_entrar_pressed"]
+[connection signal="loginInstead" from="signin" to="." method="_on_login_pressed"]

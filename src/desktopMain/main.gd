@@ -10,8 +10,7 @@ extends Control
 	$MarginContainer/VBoxContainer/visualize/avisos
 ]
 @onready var loginTab := $login
-@onready var matriculaText := $login/login/PanelContainer/MarginContainer/VBoxContainer/matricula
-@onready var senhaText := $login/login/PanelContainer/MarginContainer/VBoxContainer/senha
+@onready var signinTab := $signin
 
 @onready var isLoginRequested := false
 
@@ -24,37 +23,15 @@ func tab_changed(toggled_on: bool, id: int) -> void:
 			tabs[i].visible = tabsButtons[i].button_pressed
 	
 
-func _on_login_pressed() -> void:
-	matriculaText.text = ""
-	senhaText.text = ""
-	loginTab.visible = true
-
 func _on_cancela_pressed() -> void:
 	loginTab.visible = false
+	signinTab.visible = false
 	isLoginRequested = false
 
-func _on_entrar_pressed() -> void:
+func _on_entrar_pressed(id : int) -> void:
+	UserDataBase.loginID(id)
 	loginTab.visible = false
-	$MarginContainer/VBoxContainer/options/HBoxContainer/login.text = "mudar de conta"
-	var scene = get_tree().current_scene
-
-	if scene.getLoginState() == 1:
-		tabs[0].refreshSeatsState()
-	else:
-		get_tree().current_scene.setLoginState(1)
-	if isLoginRequested:
-		onLogin.emit()
-		isLoginRequested = false
-
-func _on_acentos_request_login() -> void:
-	_on_login_pressed()
-	isLoginRequested = true
-
-func _on_signin_pressed() -> void:
-	pass # Replace with fuction body.
-
-func _on_criarConta_pressed() -> void:
-	loginTab.visible = false
+	signinTab.visible = false
 	$MarginContainer/VBoxContainer/options/HBoxContainer/login.text = "mudar de conta"
 	var scene = get_tree().current_scene
 
@@ -63,6 +40,23 @@ func _on_criarConta_pressed() -> void:
 	else:
 		get_tree().current_scene.setLoginState(1)
 		
+	onLogin.emit()
+	
 	if isLoginRequested:
-		onLogin.emit()
 		isLoginRequested = false
+	
+	
+
+func _on_acentos_request_login() -> void:
+	_on_login_pressed()
+	isLoginRequested = true
+
+func _on_signin_pressed() -> void:
+	signinTab.reset()
+	signinTab.visible = true
+	loginTab.visible = false
+
+func _on_login_pressed() -> void:
+	loginTab.reset()
+	loginTab.visible = true
+	signinTab.visible = false

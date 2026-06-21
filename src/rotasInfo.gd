@@ -14,6 +14,8 @@ extends BoxContainer
 	RotaObject.new("A", "22:10", 24, [0, 1, 19, 20, 10, 9, 4, 22, 2, 3, 19]),
 	RotaObject.new("B", "22:10", 22, [0, 1, 20, 15, 3, 12, 13, 14, 3, 20, 18, 5, 4])
 ]
+	
+
 @onready var rotaSelectScene := preload("res://src/classes/rotaButton/rotaButton.tscn")
 
 @export var buttonListNode : Control
@@ -47,6 +49,8 @@ extends BoxContainer
 
 @export var rotaLabel : Label
 
+@onready var currentRota := 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for i in rotas.size():
@@ -63,7 +67,8 @@ func rotaSelected(id : int, button : Button):
 	for btn : Button in buttonListNode.get_children():
 		if btn != button or ProjectSettings.get("global/isMobile"):
 			btn.button_pressed = false
-	
+
+	currentRota = button.id
 	reservarAcentos.setup(rotas[button.id], button.id)
 	
 	if rotasOnibus.has(rotas[button.id].nome):
@@ -93,3 +98,6 @@ func _on_voltar_pressed() -> void:
 
 func updateInfo(data, id):
 	rotas[id].reservarAcento(data)
+
+func _on_control_on_login() -> void:
+	reservarAcentos.setup(rotas[currentRota], currentRota)

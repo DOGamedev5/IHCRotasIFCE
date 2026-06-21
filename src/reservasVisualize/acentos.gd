@@ -41,8 +41,8 @@ func _create_buttons(info : RotaObject):
 	var rSize : int = floor(listSize)
 	for i in range(lSize): # começa no 0 e para no lSize - 1
 		var btn : AcentoButton = btnInstance.instantiate()
-		btn.setup(i + 1, info.acentos[i] == 1, info.acentos[i] == 2)
-		if info.acentos[i] == 2:
+		btn.setup(i + 1, info.acentos[i].locked, info.acentos[i].userID == UserDataBase.currentLoged)
+		if info.acentos[i].userID == UserDataBase.currentLoged:
 			reservado = i
 			currentAcento = i
 			btn.setLocked(true)
@@ -52,8 +52,8 @@ func _create_buttons(info : RotaObject):
 	
 	for i in range(lSize, lSize+rSize): # começa no lSize e para no lSize+rSize - 1
 		var btn : AcentoButton = btnInstance.instantiate()
-		btn.setup(i + 1, info.acentos[i] == 1, info.acentos[i] == 2)
-		if info.acentos[i] == 2: 
+		btn.setup(i + 1, info.acentos[i].locked, info.acentos[i].userID == UserDataBase.currentLoged)
+		if info.acentos[i].userID == UserDataBase.currentLoged:
 			reservado = i
 			currentAcento = i
 			btn.setLocked(true)
@@ -103,7 +103,8 @@ func acentoEscolhido(id: int):
 	hasChanged = reservado != currentAcento
 
 func _on_login() -> void:
-	if hasChanged: _on_reserva_pressed()
+	pass
+	#if hasChanged: _on_reserva_pressed()
 
 func _on_cancel_pressed() -> void:
 	for btn : Button in listLeft.get_children():

@@ -12,7 +12,8 @@ func _ready() -> void:
 func setup(id : int, occupied : bool, reserved : bool):
 	text = str(id)
 	button_pressed = reserved
-	disabled = occupied
+	disabled = occupied and not reserved
+	locked = reserved
 	
 func _on_toggled(toggled_on: bool) -> void:
 	if locked:
