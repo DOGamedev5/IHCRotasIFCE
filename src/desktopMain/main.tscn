@@ -329,6 +329,7 @@ visible = false
 layout_mode = 1
 
 [node name="signin" parent="." unique_id=1950390930 instance=ExtResource("5_e7e5y")]
+visible = false
 layout_mode = 1
 
 [connection signal="onLogin" from="." to="MarginContainer/VBoxContainer/visualize/rotasInfo" method="_on_control_on_login"]
@@ -337,6 +338,7 @@ layout_mode = 1
 [connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/rotas" to="." method="tab_changed" binds= [0]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/options/HBoxContainer/login" to="." method="_on_login_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/options/HBoxContainer/signin" to="." method="_on_signin_pressed"]
+[connection signal="cancelReserve" from="MarginContainer/VBoxContainer/visualize/rotasInfo/acentos" to="." method="_on_acentos_cancel_reserve"]
 [connection signal="requestLogin" from="MarginContainer/VBoxContainer/visualize/rotasInfo/acentos" to="." method="_on_acentos_request_login"]
 [connection signal="logCancel" from="login" to="." method="_on_cancela_pressed"]
 [connection signal="loged" from="login" to="." method="_on_entrar_pressed"]

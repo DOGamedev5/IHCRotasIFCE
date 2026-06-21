@@ -52,7 +52,11 @@ func reservarAcento(id : int):
 			if acentos[i].locked and i != id and acentos[i].userID == UserDataBase.currentLoged:
 				acentos[i].locked = false
 				acentos[i].userID = -1
-			
+
+func cancelReservaAcento(id : int):
+	if acentos[id].userID == UserDataBase.currentLoged:
+		acentos[id].userID = -1
+		acentos[id].locked = false
 
 func acentosOcupadosSetup(listID : Array[int]):
 	for i in listID:

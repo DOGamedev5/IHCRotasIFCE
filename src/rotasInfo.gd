@@ -61,6 +61,8 @@ func _ready() -> void:
 		button.connect("selected", rotaSelected)
 	
 	reservarAcentos.updateInfo.connect(updateInfo)
+	reservarAcentos.cancelReserve.connect(cancelReserva)
+	
 	if not ProjectSettings.get("global/isMobile"): buttonListNode.get_children()[0].button_pressed = true
 
 func rotaSelected(id : int, button : Button):
@@ -98,6 +100,9 @@ func _on_voltar_pressed() -> void:
 
 func updateInfo(data, id):
 	rotas[id].reservarAcento(data)
+
+func cancelReserva(data, id):
+	rotas[id].cancelReservaAcento(data)
 
 func _on_control_on_login() -> void:
 	reservarAcentos.setup(rotas[currentRota], currentRota)

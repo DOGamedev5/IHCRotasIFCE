@@ -15,6 +15,7 @@ extends MarginContainer
 @onready var currentID := 0
 
 signal updateInfo(data, id : int)
+signal cancelReserve(data, id : int)
 signal requestLogin()
 
 func _ready() -> void:
@@ -33,7 +34,12 @@ func _process(_delta: float) -> void:
 	#var canReserve : bool = get_tree().current_scene.isAluno()
 	#reservBtn.disabled = not canReserve or not hasChanged
 	reservBtn.disabled = not hasChanged
-	cancelBtn.disabled = not hasChanged
+	if (reservado != -1 and not hasChanged):
+		cancelBtn.text = "Cancelar reserva"
+		cancelBtn.disabled = false
+	else:
+		cancelBtn.text = "Cancelar"
+		cancelBtn.disabled = not hasChanged
 
 func _create_buttons(info : RotaObject):
 	var listSize : float = float(info.totalAcentos) / 2
@@ -107,12 +113,22 @@ func _on_login() -> void:
 	#if hasChanged: _on_reserva_pressed()
 
 func _on_cancel_pressed() -> void:
+	var cancel := false
+	
+	if not hasChanged:
+		cancel = true
+		reservado = -1
+		currentAcento = -1
+		cancelReserve.emit(currentAcento, reservado)
+	
 	for btn : Button in listLeft.get_children():
 		var ID = int(btn.text)
-		btn.button_pressed = (ID-1) == reservado 
+		if cancel: btn.setLocked(false)
+		btn.button_pressed = (ID-1) == reservado
 			
 	for btn : Button in listRight.get_children(): 
 		var ID = int(btn.text)
-		btn.button_pressed = (ID-1) == reservado 
+		if cancel: btn.setLocked(false)
+		btn.button_pressed = (ID-1) == reservado
 		
 	hasChanged = false

@@ -45,7 +45,6 @@ func _on_entrar_pressed(id : int) -> void:
 	if isLoginRequested:
 		isLoginRequested = false
 	
-	
 
 func _on_acentos_request_login() -> void:
 	_on_login_pressed()
@@ -60,3 +59,7 @@ func _on_login_pressed() -> void:
 	loginTab.reset()
 	loginTab.visible = true
 	signinTab.visible = false
+
+
+func _on_acentos_cancel_reserve(data: Variant, id: int) -> void:
+	pass # Replace with function body.
