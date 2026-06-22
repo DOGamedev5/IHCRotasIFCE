@@ -26,3 +26,4 @@ func _ready() -> void:
 func isAluno(): return hasLogin == loginState.ALUNO
 func isMotorista(): return hasLogin == loginState.ALUNO
 func setLoginState(state): hasLogin = state 
+func getLoginState(): return hasLogin 

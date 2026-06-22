@@ -1,0 +1,207 @@
+[gd_scene format=3 uid="uid://dfw6r5xacddve"]
+
+[ext_resource type="Script" uid="uid://e2k5nfyd3jgo" path="res://src/loginSystem/signin.gd" id="1_42xj7"]
+[ext_resource type="Texture2D" uid="uid://x648td1fvkbw" path="res://resources/icons/olho.svg" id="2_7rvb7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42xj7"]
+bg_color = Color(0.0476159, 0.26692706, 0.16968533, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ycdy4"]
+content_margin_left = 8.0
+content_margin_top = 0.0
+content_margin_right = 8.0
+bg_color = Color(0.08, 0.08, 0.08, 0.8235294)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w48qg"]
+bg_color = Color(0.029770194, 0.15295678, 0.10302677, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vivmo"]
+bg_color = Color(0.06451783, 0.23153761, 0.22160873, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cqfq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yaehf"]
+bg_color = Color(0.07243662, 0.117710866, 0.11474667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2yge"]
+
+[node name="signin" type="ColorRect" unique_id=1950390930]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.58431375)
+script = ExtResource("1_42xj7")
+
+[node name="login" type="MarginContainer" parent="." unique_id=1731783733]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 128
+theme_override_constants/margin_top = 128
+theme_override_constants/margin_right = 128
+theme_override_constants/margin_bottom = 192
+
+[node name="PanelContainer" type="PanelContainer" parent="login" unique_id=226601638]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_42xj7")
+
+[node name="MarginContainer" type="MarginContainer" parent="login/PanelContainer" unique_id=317667445]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="login/PanelContainer/MarginContainer" unique_id=1226794536]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="login/PanelContainer/MarginContainer/VBoxContainer" unique_id=2046986588]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "CRIAR CONTA"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="matricula" type="LineEdit" parent="login/PanelContainer/MarginContainer/VBoxContainer" unique_id=228584346]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
+placeholder_text = "Matricula"
+
+[node name="S" type="HBoxContainer" parent="login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1648213182]
+layout_mode = 2
+
+[node name="senha" type="LineEdit" parent="login/PanelContainer/MarginContainer/VBoxContainer/S" unique_id=1269298385]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
+placeholder_text = "Senha"
+secret = true
+
+[node name="showSen" type="Button" parent="login/PanelContainer/MarginContainer/VBoxContainer/S" unique_id=1804115880]
+custom_minimum_size = Vector2(53, 53)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.45108542, 0.51171875, 0.49824476, 1)
+icon = ExtResource("2_7rvb7")
+flat = true
+
+[node name="cs" type="HBoxContainer" parent="login/PanelContainer/MarginContainer/VBoxContainer" unique_id=1811187378]
+layout_mode = 2
+
+[node name="senhaConfirm" type="LineEdit" parent="login/PanelContainer/MarginContainer/VBoxContainer/cs" unique_id=2046188179]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ycdy4")
+placeholder_text = "Confirmar Senha"
+secret = true
+
+[node name="showConf" type="Button" parent="login/PanelContainer/MarginContainer/VBoxContainer/cs" unique_id=1602072838]
+custom_minimum_size = Vector2(53, 53)
+layout_mode = 2
+theme_override_colors/icon_pressed_color = Color(0.45108542, 0.51171875, 0.49824476, 1)
+icon = ExtResource("2_7rvb7")
+flat = true
+
+[node name="signininstead" type="Button" parent="login/PanelContainer/MarginContainer/VBoxContainer" unique_id=741313355]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
+text = "ja tem uma conta? entrar."
+
+[node name="HSeparator" type="HSeparator" parent="login/PanelContainer/MarginContainer/VBoxContainer" unique_id=795724868]
+layout_mode = 2
+theme_override_constants/separation = 16
+theme_override_styles/separator = SubResource("StyleBoxEmpty_h2yge")
+
+[node name="erro" type="Label" parent="login/PanelContainer/MarginContainer/VBoxContainer" unique_id=652949804]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.13660687, 0.11588544, 1)
+theme_override_font_sizes/font_size = 24
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="login/PanelContainer/MarginContainer/VBoxContainer" unique_id=2052914329]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="cancela" type="Button" parent="login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1603330420]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
+text = "cancelar"
+
+[node name="criar" type="Button" parent="login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1535078373]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
+text = "Criar conta"
+
+[connection signal="button_down" from="login/PanelContainer/MarginContainer/VBoxContainer/S/showSen" to="." method="_on_show_sen_button_down"]
+[connection signal="button_up" from="login/PanelContainer/MarginContainer/VBoxContainer/S/showSen" to="." method="_on_show_sen_button_up"]
+[connection signal="button_down" from="login/PanelContainer/MarginContainer/VBoxContainer/cs/showConf" to="." method="_on_show_conf_button_down"]
+[connection signal="button_up" from="login/PanelContainer/MarginContainer/VBoxContainer/cs/showConf" to="." method="_on_show_conf_button_up"]
+[connection signal="pressed" from="login/PanelContainer/MarginContainer/VBoxContainer/signininstead" to="." method="_on_signininstead_pressed"]
+[connection signal="pressed" from="login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/cancela" to="." method="_on_cancela_pressed"]
+[connection signal="pressed" from="login/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/criar" to="." method="_on_criar_pressed"]

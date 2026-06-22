@@ -1,6 +1,20 @@
 class_name RotaObject extends Resource
 
 
+class assentoInfo:
+	var userID := -1
+	var locked := false
+	
+	func _init(uID : int, lock := false):
+		userID = uID
+		locked = lock
+	
+	func reserve(user : int):
+		if not locked:
+			userID = user
+			locked = true
+	
+
 enum ACENTO_STATUS {
 	VAZIO,
 	OCUPADO_OUTRO,
@@ -14,7 +28,7 @@ enum ACENTO_STATUS {
 
 @export var nome := "A"
 @export var horario := "6:30"
-@export var acentos : Array[ACENTO_STATUS]= [] # mesma coisa que Array[int] porém deixa claro o contexto dos valores
+@export var acentos : Array = [] # mesma coisa que Array[int] porém deixa claro o contexto dos valores
 @export var totalAcentos := 30
 
 
@@ -22,19 +36,31 @@ func _init(Nome : String, Horario : String, tamanho : int, setupOcupado : Array[
 	nome = Nome
 	horario = Horario
 	totalAcentos = tamanho
-	acentos.resize(totalAcentos)
-	acentos.fill(ACENTO_STATUS.VAZIO)
+	for i in range(totalAcentos):
+		acentos.append(assentoInfo.new(-1))
+	#acentos.resize(totalAcentos)
+	#acentos.fill(assentoInfo.new(-1))
 	acentosOcupadosSetup(setupOcupado)
 
 func reservarAcento(id : int):
 	
-	if acentos[id] == ACENTO_STATUS.VAZIO:
-		acentos[id] = ACENTO_STATUS.RESERVADO
+	if not acentos[id].locked:
+		acentos[id].locked = true
+		acentos[id].userID = UserDataBase.currentLoged
 		
 		for i in range(acentos.size()):
-			if acentos[i] == ACENTO_STATUS.RESERVADO and i != id:
-				acentos[i] = ACENTO_STATUS.VAZIO
-			
+			if acentos[i].locked and i != id and acentos[i].userID == UserDataBase.currentLoged:
+				acentos[i].locked = false
+				acentos[i].userID = -1
+
+func cancelReservaAcento(id : int):
+	if acentos[id].userID == UserDataBase.currentLoged:
+		acentos[id].userID = -1
+		acentos[id].locked = false
 
 func acentosOcupadosSetup(listID : Array[int]):
-	for i in listID: acentos[i] = ACENTO_STATUS.OCUPADO_OUTRO
+	for i in listID:
+		acentos[i].locked = true
+
+func resetAcentos():
+	pass
