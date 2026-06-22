@@ -37,6 +37,13 @@ func _on_entrar_pressed() -> void:
 		else:
 			loged.emit(accountId)
 
+func themeUpdated(value : bool):
+	var panel : PanelContainer = $login/PanelContainer
+	if value:
+		panel.get_theme_stylebox("panel").bg_color = Color(0.04, 0.26, 0.16)
+	else:
+		panel.get_theme_stylebox("panel").bg_color = Color(0.25, 0.43, 0.35)
+
 func _on_signininstead_pressed() -> void: signInstead.emit()
 
 func _on_show_sen_button_down() -> void: senha.secret = false

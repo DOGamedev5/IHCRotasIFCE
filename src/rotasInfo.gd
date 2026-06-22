@@ -50,6 +50,7 @@ extends BoxContainer
 @export var rotaLabel : Label
 
 @onready var currentRota := 0
+@onready var currentTheme := true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -57,6 +58,7 @@ func _ready() -> void:
 		var button := rotaSelectScene.instantiate()
 		button.init(rotas[i], i)
 		buttonListNode.add_child(button)
+		button.themeChanged(currentTheme)
 		#buttonListReference.append(button)
 		button.connect("selected", rotaSelected)
 	
@@ -106,3 +108,8 @@ func cancelReserva(data, id):
 
 func _on_control_on_login() -> void:
 	reservarAcentos.setup(rotas[currentRota], currentRota)
+
+func themeChanged(value : bool):
+	currentTheme = value
+	for r in buttonListNode.get_children():
+		r.themeChanged(value)

@@ -28,4 +28,14 @@ func setLocked(value : bool):
 		modulate = Color(0.6, 0.6, 0.6)
 	else:
 		modulate = Color.WHITE
+		
+
+func themeUpdate(value : bool):
+	if value:
+		add_theme_color_override("font_color", Color.BLACK)
+		add_theme_color_override("font_focus_color", Color.BLACK)
+	else:
+		add_theme_color_override("font_color", Color.WHITE)
+		add_theme_color_override("font_focus_color", Color.WHITE)
+		pass
 	

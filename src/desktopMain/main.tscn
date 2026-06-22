@@ -5,9 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://damlntl5je3qg" path="res://src/reservasVisualize/acentos.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://bjpvyexbarb5w" path="res://src/loginSystem/login.tscn" id="4_rdbf6"]
 [ext_resource type="PackedScene" uid="uid://dfw6r5xacddve" path="res://src/loginSystem/signin.tscn" id="5_e7e5y"]
+[ext_resource type="PackedScene" uid="uid://cs841p3rwl2nd" path="res://src/config/config.tscn" id="6_arihd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7dm0k"]
-bg_color = Color(0, 0, 0, 0.47058824)
+bg_color = Color(0.047058824, 0.02745098, 0.09411765, 0.43137255)
 corner_radius_top_left = 12
 corner_radius_top_right = 12
 corner_radius_bottom_right = 12
@@ -124,14 +125,14 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1254447148]
+[node name="fundo" type="ColorRect" parent="." unique_id=1254447148]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.04554584, 0.14119738, 0.16430548, 1)
+color = Color(0.039215688, 0.14117648, 0.16078432, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="." unique_id=469043195]
 layout_mode = 1
@@ -158,6 +159,18 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7dm0k")
 layout_mode = 2
 theme_override_constants/separation = 16
 alignment = 1
+
+[node name="config" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=1828185882]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_ig7tw")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/hover = SubResource("StyleBoxFlat_h2yge")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_1bvp3")
+theme_override_styles/focus = SubResource("StyleBoxFlat_lquwl")
+text = "configuração"
 
 [node name="avisos" type="Button" parent="MarginContainer/VBoxContainer/options/HBoxContainer" unique_id=28752929]
 custom_minimum_size = Vector2(0, 32)
@@ -332,13 +345,17 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
+[node name="config" parent="." unique_id=4368520 instance=ExtResource("6_arihd")]
+visible = false
+layout_mode = 1
+
 [connection signal="onLogin" from="." to="MarginContainer/VBoxContainer/visualize/rotasInfo" method="_on_control_on_login"]
 [connection signal="onLogin" from="." to="MarginContainer/VBoxContainer/visualize/rotasInfo/acentos" method="_on_login"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/options/HBoxContainer/config" to="." method="_on_config_pressed"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/avisos" to="." method="tab_changed" binds= [1]]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/options/HBoxContainer/rotas" to="." method="tab_changed" binds= [0]]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/options/HBoxContainer/login" to="." method="_on_login_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/options/HBoxContainer/signin" to="." method="_on_signin_pressed"]
-[connection signal="cancelReserve" from="MarginContainer/VBoxContainer/visualize/rotasInfo/acentos" to="." method="_on_acentos_cancel_reserve"]
 [connection signal="requestLogin" from="MarginContainer/VBoxContainer/visualize/rotasInfo/acentos" to="." method="_on_acentos_request_login"]
 [connection signal="logCancel" from="login" to="." method="_on_cancela_pressed"]
 [connection signal="loged" from="login" to="." method="_on_entrar_pressed"]
@@ -346,3 +363,4 @@ layout_mode = 1
 [connection signal="logCancel" from="signin" to="." method="_on_cancela_pressed"]
 [connection signal="loged" from="signin" to="." method="_on_entrar_pressed"]
 [connection signal="loginInstead" from="signin" to="." method="_on_login_pressed"]
+[connection signal="themeChanged" from="config" to="." method="_on_config_theme_changed"]

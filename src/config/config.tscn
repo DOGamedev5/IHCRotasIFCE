@@ -1,0 +1,220 @@
+[gd_scene format=3 uid="uid://cs841p3rwl2nd"]
+
+[ext_resource type="Script" uid="uid://bl2r5kiwiqrbp" path="res://src/config/config.gd" id="1_m7i7o"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42xj7"]
+bg_color = Color(0.3466746, 0.41796875, 0.386141, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ehv50"]
+bg_color = Color(1, 1, 1, 0.12900001)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.03859625, 0.12895444, 0.18880206, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7i7o"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.03859625, 0.12895444, 0.18880206, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fjtmm"]
+bg_color = Color(0.086104214, 0.22658296, 0.14733289, 0.50600004)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.03859625, 0.12895444, 0.18880206, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w48qg"]
+bg_color = Color(0.029770194, 0.15295678, 0.10302677, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vivmo"]
+bg_color = Color(0.06451783, 0.23153761, 0.22160873, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2cqfq"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yaehf"]
+bg_color = Color(0.07243662, 0.117710866, 0.11474667, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 4.0
+expand_margin_right = 4.0
+
+[node name="config" type="ColorRect" unique_id=4368520]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.58431375)
+script = ExtResource("1_m7i7o")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1796959434]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer" unique_id=1911773382]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_42xj7")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer" unique_id=2009764461]
+layout_mode = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer" unique_id=2098216320]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1864157441]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 32
+text = "Configurações"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="hbox" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=613792745]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 128
+
+[node name="vbox" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/hbox" unique_id=1705024536]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="tema" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/hbox/vbox" unique_id=2043973505]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/hbox/vbox/tema" unique_id=1215112060]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "tema Escuro: "
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/hbox/vbox/tema" unique_id=1213936632]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ehv50")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m7i7o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fjtmm")
+toggle_mode = true
+button_pressed = true
+
+[node name="vbox2" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/hbox" unique_id=340654339]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/hbox/vbox2" unique_id=996147715]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/hbox/vbox2/HBoxContainer" unique_id=860479149]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
+text = "tema Escuro: "
+
+[node name="Button" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/hbox/vbox2/HBoxContainer" unique_id=130688751]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_ehv50")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m7i7o")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fjtmm")
+toggle_mode = true
+
+[node name="Label2" type="RichTextLabel" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=1880172907]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.94401044, 0.94401044, 0.94401044, 1)
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "[color=yellow]Informações de contato:[/color]
+[color=yellow]email:[/color] RotasIFCE@ifce.edu.br
+[color=yellow]numero:[/color] (88) 99999-9999"
+fit_content = true
+scroll_active = false
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer" unique_id=822638256]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="cancela" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1136958187]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
+text = "cancelar"
+
+[node name="salver" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer" unique_id=1401233847]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_w48qg")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vivmo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_2cqfq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_yaehf")
+text = "salvar mudanças"
+
+[connection signal="toggled" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/hbox/vbox/tema/Button" to="." method="_on_button_toggled"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/cancela" to="." method="_on_cancela_pressed"]
+[connection signal="pressed" from="MarginContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/salver" to="." method="_on_salver_pressed"]

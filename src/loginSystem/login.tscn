@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://x648td1fvkbw" path="res://resources/icons/olho.svg" id="2_hy1rl"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dg77c"]
-bg_color = Color(0.0476159, 0.26692706, 0.16968533, 1)
+bg_color = Color(0.25349423, 0.43359375, 0.3531922, 1)
 corner_radius_top_left = 16
 corner_radius_top_right = 16
 corner_radius_bottom_right = 16

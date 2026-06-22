@@ -11,10 +11,14 @@ extends Control
 ]
 @onready var loginTab := $login
 @onready var signinTab := $signin
+@onready var configTab := $config
 
 @onready var isLoginRequested := false
 
 signal onLogin
+
+func _ready() -> void:
+	_on_config_theme_changed(true)
 
 func tab_changed(toggled_on: bool, id: int) -> void:
 	if toggled_on == true:
@@ -60,6 +64,17 @@ func _on_login_pressed() -> void:
 	loginTab.visible = true
 	signinTab.visible = false
 
+func _on_config_pressed() -> void:
+	configTab.resetValues()
+	configTab.visible = true
 
-func _on_acentos_cancel_reserve(data: Variant, id: int) -> void:
-	pass # Replace with function body.
+func _on_config_theme_changed(value: bool) -> void:
+	if value:
+		$fundo.color = Color(0.04, 0.14, 0.16, 1.00)
+	else:
+		$fundo.color = Color.WHITE#Color(0.91, 1.00, 0.82, 1.00)
+		
+	tabs[0].themeChanged(value)
+	configTab.themeUpdated(value)
+	signinTab.themeUpdated(value)
+	loginTab.themeUpdated(value)
